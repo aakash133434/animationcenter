@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .product-card {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-description {
+            margin-bottom: 20px;
+        }
+
+        .product-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .add-to-cart,
+        .buy-now {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .buy-now {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #333;
+        }
+        #chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #chat-messages {
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-top: 1px solid #ccc;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-card">
+        <img class="product-image" src="Capture.JPG" alt="Product Image">
+        <div class="product-info">
+            <h2>page key</h2>
+            <p class="product-description">Get page key now and unlock latest character packs with customized voice packs and special effects like magic,weapons and dresses.</p>
+            <p class="price">300pkr</p>
+            <div class="product-buttons">
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <a href="https://wa.me/message/3FTHBFBOXXVND1"><button class="buy-now">Buy Now</button></a>
+            </div>
+        </div>
+    </div>
+    <div><h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">whatsapp number 03423553172</h1></div>
+    <div id="chat-container">
+      <div id="chat-header">help centere</div>
+      <div id="chat-messages"></div>
+      <input type="text" id="user-input" placeholder="Type your message...">
+  </div>
+
+  <script>
+      const chatMessages = document.getElementById('chat-messages');
+      const userInput = document.getElementById('user-input');
+
+      function appendMessage(sender, message) {
+          const messageDiv = document.createElement('div');
+          messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+          chatMessages.appendChild(messageDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight; 
+      }
+
+      function handleUserInput() {
+          const userMessage = userInput.value;
+          appendMessage('You', userMessage);
+
+          
+          setTimeout(() => {
+              const botResponse = 'aoa sir you dont have acces to product key .';
+              appendMessage('support team', botResponse);
+          }, 500);
+          
+          userInput.value = ''; 
+      }
+
+      userInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+              handleUserInput();
+          }
+      });
+      function handleUserInput2() {
+          const userMessage = userInput.value;
+          appendMessage('You', userMessage);
+
+          
+          setTimeout(() => {
+              const botResponse = 'buy our product key now or pay rs 300 on easypaisa num(03171152186) account title aiman and send screenshot on given whatsapp number .';
+              appendMessage('support team', botResponse);
+          }, 500);
+          
+          userInput.value = ''; 
+      }
+
+      userInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+              handleUserInput2();
+          }
+      });
+  </script>
+    <script>
+        function addToCart() {
+            
+            const productName = "Product Name";
+            const productPrice = 300;
+
+            
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            
+            cart.push({
+                name: productName,
+                price: productPrice,
+            });
+
+            
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Product added to cart!");
+        }
+
+    </script>
+
+</body>
+</html>
